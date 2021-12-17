@@ -1,0 +1,19 @@
+{
+  "name": "expressrouter",
+  "version": "1.0.0",
+  "description": "Express Router Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "author": "manas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^2.0.15",
+    "uuid-v4": "^0.1.0"
+  }
+}
