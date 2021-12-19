@@ -3,7 +3,7 @@
 // const userRouter = express.Router();
 const uuid_v4 = require("uuid-v4");
 
-var users = [
+var users = [//you can un comment below array of object(users) but taking it as an empty array from start
     /* 
         "first_name": "Luffy",
         "last_name": "Monkey D.",
@@ -26,9 +26,9 @@ exports.getAllUsers = (req, res) => {
 exports.createUser = (req, res) => {
     // POST method is use to create new entry to specific item
 
-    let user = req.body;
+    let user = req.body;//first we add what is in req.body into user
     users.push({
-        ...user, _id: uuid_v4()});
+        ...user, _id: uuid_v4()});//here we are allocating unquie ID for every user we create
     res.send(users);
 }
 
@@ -68,7 +68,7 @@ exports.getUserById = (req, res) => {
     
     let { id } = req.params;
     console.log("User ID that we are serching :"+id);
-    let foundUser = users.find((user) => user._id == id);
+    let foundUser = users.find((user) => user._id == id);//here we are sorting user using id which pass by client in params
     if (foundUser) {
         res.send(foundUser);
         console.log(foundUser);
