@@ -1,1 +1,410 @@
 
+/create a collection "Film"/
+/1. Insert at least 10 documents in the collection Film –
+a. Insert at least one document with film belonging to two genres.
+b. Insert at least one document with film that is released at more than one place
+and on two different dates.
+c. Insert at least three documents with the films released in the same year.
+d. Insert at least two documents with the films directed by one director.
+e. Insert at least two documents with films those are acted by a pair ‘Madhuri
+Dixit’ and ‘Shahrukh Khan’./
+db.Film.insertMany([
+{
+filmId:111,
+title : " Raees " ,
+year : 2017 ,
+genre : [
+" Action " ,
+" Adventure " ,
+" Crime",
+],
+actors : [
+"Shah Rukh ,Khan",
+"Mahira , Khan",
+" Nawazuddin, Siddiqui"
+],
+director : [
+"Rahul Dholakia"
+],
+releases : [
+{
+placesOfRelease : " Pune " ,
+date : Date (" 2017 -05 -17 ") ,
+rating:4.5
+}
+]},{
+filmId:222,
+title : " Haraamkhor " ,
+year : 2017 ,
+genre : [
+"Comedy",
+" Crime",
+],
+actors : [
+"Shweta ,Tripathi",
+" Nawazuddin, Siddiqui"
+],
+director : [
+"Shlok Sharma"
+],
+releases : [
+{
+placesOfRelease : " Pune " ,
+date : Date (" 2017 -07 -01 ") ,
+rating:8.9
+},
+{
+placesOfRelease : " Mumbai " ,
+date : Date (" 2017 -01 -16 ") ,
+rating:7.9
+}
+]},{
+filmId:333,
+title:"Jolly LLB 2",
+year:2018,
+genre:[
+"Drama"
+],
+actors:[
+"Akshay ,Kumar",
+"Huma ,Qureshi",
+"Saurabh , Shukla"
+],
+director:[
+"Subhash Kapoor"
+],
+releases:[{
+placesOfRelease : " Mumbai " ,
+date : Date (" 2018 -02 -21 ") ,
+rating:7.9
+}]
+},{
+filmId:444,
+title:"Irada",
+year:2018,
+genre:[
+"Drama",
+"Thriller"
+],
+actors:[
+"Naseeruddin , Shah",
+" Arshad , Warsi",
+"Sharad ,Kelkar",
+" Divya ,Dutta"
+],
+director:[
+"Aparnaa Singh"
+],
+releases:[{
+placesOfRelease : " Nagpur " ,
+date : Date (" 2018 -05 -16 ") ,
+rating:6.5
+}]},{
+filmId:555,
+title:"Coffee with D",
+year:2018,
+genre:[
+"Comedy",
+"Crime"
+],
+actors:[
+"Sunil ,Grover",
+" Zakir, Hussain"
+],
+director:[
+"Vishal Mishra"
+],
+releases:[{
+placesOfRelease : " Pune " ,
+date : Date (" 2018 -09 -28 ") ,
+rating:3.5
+}]
+},
+{
+filmId:666,
+title:"Hind Ka Napak Ko Jawab: MSG Lion Heart 2",
+year:2019,
+genre:[
+"Action",
+"Drama"
+],
+actors:[
+"Gurmeet Ram Rahim ,Singh",
+" Honeypreet ,Insan"
+],
+director:[
+"Gurmeet Ram Rahim ,Singh",
+" Honeypreet ,Insan"
+],
+releases:[{
+placesOfRelease : " Punjab" ,
+date : Date (" 2019 -07 -10 ") ,
+rating:3.5
+}]
+},{filmId:777,
+title:"The Ghazi Attack",
+year:2020,
+genre:[
+"Action"
+],
+actors:[
+"Rana ,Daggubati",
+" Taapsee , Pannu",
+" Kay Kay , Menon",
+" Atul , Kulkarni"
+],
+director:[
+"Sankalp Reddy"
+],
+releases:[{
+placesOfRelease : " Delhi" ,
+date : Date (" 2020 -02 -09 ") ,
+rating:9.5
+}]
+},{filmId:888,
+title:"Koyla",
+year:2010,
+genre:[
+"Action"
+],
+actors:[
+"Madhuri,Dixit",
+"Shahrukh ,Khan"
+],
+director:[
+"Sankalp Reddy"
+],
+releases:[{
+placesOfRelease : " Delhi " ,
+date : Date (" 2010 -02 -09 ") ,
+rating:2.5
+}]
+},{
+filmId:999,
+title:"Devdas",
+year:2002,
+genre:[
+"Action",
+"Comedy",
+"Adventure"
+],
+actors:[
+"Madhuri,Dixit",
+"Shahrukh ,Khan"
+],
+director:[
+"Sanjay Leela Bhansali"
+],
+releases:[{
+placesOfRelease : " Delhi " ,
+date : Date (" 2002 -07 -12 ") ,
+rating:2.5
+}]},
+{filmId:000,
+title:"Anjaam",
+year:2012,
+genre:[
+"Action",
+"Comedy",
+"Crime"
+],
+actors:[
+"Madhuri,Dixit",
+"Shahrukh ,Khan"
+],
+director:[
+"Rahul Rawali"
+],
+releases:[{
+placesOfRelease : " kolkata " ,
+date : Date (" 2012 -04 -22 ") ,
+rating:6.8
+}]
+}])
+/create Collection "Actor"/
+/2. Insert at least 10 documents in the collection Actor/
+db.Actor.insertMany([
+{ actorId:001,
+firstName:"Shah Rukh",
+lastName:"Khan",
+address:{
+street:"Sadhashiv peth",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411043
+},
+contactDetails:{
+emailId:"shahrukh@gmail.com",
+phoneNo:1234567890
+},
+age:65
+},{actorId:002,
+firstName:"Nawazuddin",
+lastName:"Siddiqui",
+address:{
+street:"A.B.Chuk",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411030
+},
+contactDetails:{
+emailId:"Nawazuddin@gmail.com",
+phoneNo:369852147
+},
+age:45
+},{ actorId:003,
+firstName:"Akshay",
+lastName:"Kumar",
+address:{
+street:"BalajiNager",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411043
+},
+contactDetails:{
+emailId:"A@gmail.com",
+phoneNo:789123466
+},
+age:40
+},{ actorId:004,
+firstName:"Arshad",
+lastName:"Warsi",
+address:{
+street:"katraj",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411002
+},
+contactDetails:{
+emailId:"arshad@gmail.com",
+phoneNo:7412589630
+},
+age:30
+},{ actorId:005,
+firstName:"Sharad",
+lastName:"Kelkar",
+address:{
+street:"Chitanya Nager",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411043
+},
+contactDetails:{
+emailId:"sharad@gmail.com",
+phoneNo:7894589632
+},
+age:40
+},{ actorId:006,
+firstName:"Gurmeet Ram Rahim",
+lastName:"Singh",
+address:{
+street:"jail",
+city:"hariyana",
+state:"Punjab",
+country:"India",
+pin_code:01234
+},
+contactDetails:{
+emailId:"ramrahim@gmail.com",
+phoneNo:4152669774
+},
+age:65},{
+actorId:007,
+firstName:"Rana",
+lastName:"Daggubati",
+address:{
+street:"dont know",
+city:" ",
+state:"karnatak",
+country:"India",
+pin_code:0123
+},
+contactDetails:{
+emailId:"rana@gmail.com",
+phoneNo:7845129630
+},
+age:36},{
+actorId:008 ,
+firstName:"Madhuri",
+lastName:"Dixit",
+address:{
+street:"wda",
+city:"Bombai",
+state:"Maharashtra",
+country:"India",
+pin_code:0123
+},
+contactDetails:{
+emailId:"madhuri@gmail.com",
+phoneNo:0123456987
+},
+age:35},{
+actorId:009,
+firstName:"Mahira",
+lastName:"Khan",
+address:{
+street:"adasd",
+city:"Pune",
+state:"Maharashtra",
+country:"India",
+pin_code:411023
+},
+contactDetails:{
+emailId:"mahirah@gmail.com",
+phoneNo:9517536842
+},
+age:48},{
+actorId:000,
+firstName:"Hritik",
+lastName:"Roshan",
+address:{
+street:"kurla",
+city:"Mumbai",
+state:"Maharashtra",
+country:"India",
+pin_code:0456
+},
+contactDetails:{
+emailId:"hrx@gmail.com",
+phoneNo:9871236450
+},
+age:49}])
+
+3.db.Film.find().pretty();
+-db.Actor.find().pretty();
+
+4.Add a value to the rating of the film whose title starts with ‘T’
+-db.Film.find({title:/^T/}).pretty();
+-db.Film.updateOne({title:/^T/},{$set:{'release.rating':5.5}})
+
+Add an actor named " " in the ‘Actor’ collection. Also add
+the details of the film in ‘Film’ collection in which this actor has acted in.
+-db.Actor.insertOne({
+actorId:123,
+firstName:"Taapsee",
+lastName:"Pannu",
+film:});
+
+6.Delete the film " ".
+
+db.Film.deleteOne({"title":"Raees"});
+7.Delete an actor named " ".
+
+db.Actor.deleteOne({firstName:""})
+Delete all actors from an ‘Actor’ collection who have age greater than “69 ”
+db.Actor.deleteMany({age:{$gt:69}})
+Update the actor’s address where Actor Id is “ ”.
+db.Actor.updateMany({actorId:6},
+{$set:{'address.street':"Jail",
+'address.city':"Jail",
+'address.state':"jail",
+'address.country':"jail",
+'address.pin_code':100})
+10.Update the genre of the film directed by “ Shlok Sharma ”.
+
+db.Film.updateOne({director:"Shlok Sharma"},{$set:{'genre':["Action","Adventure"]}})
