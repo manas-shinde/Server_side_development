@@ -1,6 +1,22 @@
+(1) create dataase “movie”
+> use movie
+switched to db movie
+----------------------------------------------------------------------------------------------------------------------------
+(2) create collection named “Film”
+> db.createCollection("Film")
+{ "ok" : 1 }
+>
+----------------------------------------------------------------------------------------------------------------------------
+(3) create collection named “Actor”
 
-/create a collection "Film"/
-/1. Insert at least 10 documents in the collection Film –
+> db.createCollection("Actor")
+{ "ok" : 1 }
+>
+----------------------------------------------------------------------------------------------------------------------------
+Queries
+----------------------------------------------------------------------------------------------------------------------------
+(1) Insert at least 10 documents in the collection Film
+
 a. Insert at least one document with film belonging to two genres.
 b. Insert at least one document with film that is released at more than one place
 and on two different dates.
@@ -8,7 +24,7 @@ c. Insert at least three documents with the films released in the same year.
 d. Insert at least two documents with the films directed by one director.
 e. Insert at least two documents with films those are acted by a pair ‘Madhuri
 Dixit’ and ‘Shahrukh Khan’./
-db.Film.insertMany([
+>db.Film.insertMany([
 {
 filmId:111,
 title : " Raees " ,
@@ -221,9 +237,10 @@ date : Date (" 2012 -04 -22 ") ,
 rating:6.8
 }]
 }])
-/create Collection "Actor"/
-/2. Insert at least 10 documents in the collection Actor/
-db.Actor.insertMany([
+----------------------------------------------------------------------------------------------------------------------------
+(2) Insert at least 10 documents in the collection Actor.
+
+>db.Actor.insertMany([
 { actorId:001,
 firstName:"Shah Rukh",
 lastName:"Khan",
@@ -374,37 +391,41 @@ emailId:"hrx@gmail.com",
 phoneNo:9871236450
 },
 age:49}])
-
+----------------------------------------------------------------------------------------------------------------------------
 3.db.Film.find().pretty();
 -db.Actor.find().pretty();
-
+----------------------------------------------------------------------------------------------------------------------------
 4.Add a value to the rating of the film whose title starts with ‘T’
 -db.Film.find({title:/^T/}).pretty();
 -db.Film.updateOne({title:/^T/},{$set:{'release.rating':5.5}})
-
-Add an actor named " " in the ‘Actor’ collection. Also add
+----------------------------------------------------------------------------------------------------------------------------
+5.Add an actor named " " in the ‘Actor’ collection. Also add
 the details of the film in ‘Film’ collection in which this actor has acted in.
--db.Actor.insertOne({
+>db.Actor.insertOne({
 actorId:123,
 firstName:"Taapsee",
 lastName:"Pannu",
 film:});
-
+----------------------------------------------------------------------------------------------------------------------------
 6.Delete the film " ".
 
-db.Film.deleteOne({"title":"Raees"});
+>db.Film.deleteOne({"title":"Raees"});
+
+----------------------------------------------------------------------------------------------------------------------------
 7.Delete an actor named " ".
 
-db.Actor.deleteOne({firstName:""})
-Delete all actors from an ‘Actor’ collection who have age greater than “69 ”
-db.Actor.deleteMany({age:{$gt:69}})
-Update the actor’s address where Actor Id is “ ”.
-db.Actor.updateMany({actorId:6},
+>db.Actor.deleteOne({firstName:""})
+----------------------------------------------------------------------------------------------------------------------------
+8.Delete all actors from an ‘Actor’ collection who have age greater than “69 ”
+>db.Actor.deleteMany({age:{$gt:69}})
+----------------------------------------------------------------------------------------------------------------------------
+9.Update the actor’s address where Actor Id is “ ”.
+>db.Actor.updateMany({actorId:6},
 {$set:{'address.street':"Jail",
 'address.city':"Jail",
 'address.state':"jail",
 'address.country':"jail",
 'address.pin_code':100})
+----------------------------------------------------------------------------------------------------------------------------
 10.Update the genre of the film directed by “ Shlok Sharma ”.
-
-db.Film.updateOne({director:"Shlok Sharma"},{$set:{'genre':["Action","Adventure"]}})
+>db.Film.updateOne({director:"Shlok Sharma"},{$set:{'genre':["Action","Adventure"]}})
